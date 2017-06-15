@@ -97,6 +97,63 @@ reboot	重启
 
 > 例：grep -r "close" /home/* | more 在home目录下所有文件中查找，包括close的文件，并分页输出
 
+## Linux软件包管理
+
+> dpkg（Debian Package）管理工具，软件包名以.deb后缀。这种方法适合系统不能联网的情况下。比如安装tree命令的安装包，先将tree.deb传到Linux系统中。再使用如下命令安装
+
+```
+sudo dpkg -i tree_1.5.3-1_i386.deb	安装软件
+sudo dpkg -r tree					卸载软件
+```
+
+> 注：将tree.deb传到Linux系统中，有多种方式。VMware Tool，使用挂载方式；使用winSCP工具等；APT（Advanced Packaging Tool）高级软件工具。这种方法适合系统能够连接互联网的情况。
+
+```
+// 依然以tree为例
+sudo apt-get install tree	安装tree
+sudo apt-get remove tree	卸载tree
+sudo apt-get update			更新软件
+sudo apt-get upgrade
+```
+
+> 将.rpm文件转为.deb文件（.rpm为RedHat使用的软件格式。在Ubuntu下不能直接使用，所以需要转换一下。）
+
+```
+sudo alien abc.rpm
+```
+
+### vim使用
+
+> vim三种模式：命令模式、插入模式、编辑模式。使用ESC或i或:来切换模式
+
+|      命令       |               说明               |
+| :-----------: | :----------------------------: |
+|      :q       |               退出               |
+|      :q!      |              强制退出              |
+|      :wq      |             保存并退出              |
+|  :set number  |              显示行号              |
+| :set nonumber |              隐藏行号              |
+|    /apache    | 在文档中查找apache按n跳到下一个，shift+n上一个 |
+|      yyp      |          复制光标所在行，并粘贴           |
+|       h       |            左移一个字符←             |
+|       j       |              下一行↓              |
+|       k       |              上一行↑              |
+|       l       |            右移一个字符→             |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
